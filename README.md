@@ -72,11 +72,36 @@ python -m unittest discover -s tests -p "test_*.py" -v
 4. Enter quote currency for crypto (for example: `usd`)
 5. Optionally create alerts and view results
 
+## Example Output
+
+```text
+=== Currency and Crypto Tracker ===
+Enter base currency code (example: USD): USD
+Enter target currency codes separated by commas (example: TRY,EUR): TRY,EUR
+Enter crypto coin id to track (example: bitcoin): bitcoin
+Enter quote currency for crypto price (example: usd): usd
+
+--- Live Snapshot ---
+USD/TRY: 38.9120
+USD/EUR: 0.9210
+BITCOIN/USD: 68215.31
+
+--- Alert Rules (Optional) ---
+Would you like to add a forex alert? (y/n): y
+Alert direction ('above' or 'below'): above
+Enter threshold value: 38.0
+Would you like to add a crypto alert? (y/n): n
+
+--- Alert Results ---
+[ALERT] USD/TRY is 38.9120 and moved above 38.0000.
+```
+
 ## Known Limitations
 
-- CLI flow is interactive only (no config file yet)
-- Crypto tracking is currently single-coin per run
-- Alerts are evaluated for one snapshot (not continuous polling)
+- CLI flow is interactive only (no config file or command-line flags yet)
+- Crypto tracking supports a single coin per run
+- Alerts are evaluated only once per execution (no continuous polling loop)
+- No persistent storage layer (alert history is not saved to disk/database)
 
 ## Roadmap Ideas
 
@@ -84,6 +109,25 @@ python -m unittest discover -s tests -p "test_*.py" -v
 - Multi-coin tracking in one run
 - Alert persistence (file or database)
 - Optional desktop/email notifications
+
+## Suggested GitHub Topics
+
+If you want your repository to be easier to discover, add these topics in GitHub:
+
+- `python`
+- `cli`
+- `api-client`
+- `forex`
+- `cryptocurrency`
+- `market-tracker`
+
+## Release Checklist (v1.0.0)
+
+- [x] Core application modules implemented
+- [x] Unit tests added and passing
+- [x] GitHub Actions CI added
+- [x] Documentation and setup instructions completed
+- [ ] Create a GitHub Release named `v1.0.0`
 
 ## License
 
