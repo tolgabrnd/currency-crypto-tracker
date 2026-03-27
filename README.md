@@ -87,4 +87,4 @@ python -m unittest discover -s tests -p "test_*.py" -v
 
 ## License
 
-This project is currently unlicensed. Add an open-source license (for example MIT) before publishing publicly.
+MIT License
